@@ -41,14 +41,14 @@ def test_validate_schema():
     body = b'{"point": {"x": 1.0, "y": 2.0}, "circle": {"x": 1.1, "y": 2.6, "radius": 4.2}}'
     request = rf.post('/api', data=body, content_type='application/json')
     response = in_circle(request)
-    jsonschema.validate(json.loads(response.content), schema_response)
+    jsonschema.validate(json.loads(response.content.decode("utf-8")), schema_response)
 
 
 def test_calculation_true():
     body = b'{"point": {"x": 1.0, "y": 2.0}, "circle": {"x": 1.1, "y": 2.6, "radius": 4.2}}'
     request = rf.post('/api', data=body, content_type='application/json')
     response = in_circle(request)
-    response_dict = json.loads(response.content)
+    response_dict = json.loads(response.content.decode("utf-8"))
     jsonschema.validate(response_dict, schema_response)
     assert response_dict["inside"]
 
@@ -57,7 +57,7 @@ def test_calculation_false():
     body = b'{"point": {"x": 1.0, "y": 2.0}, "circle": {"x": 1.1, "y": 2.6, "radius": 0.2}}'
     request = rf.post('/api', data=body, content_type='application/json')
     response = in_circle(request)
-    response_dict = json.loads(response.content)
+    response_dict = json.loads(response.content.decode("utf-8"))
     jsonschema.validate(response_dict, schema_response)
     assert not response_dict["inside"]
 
