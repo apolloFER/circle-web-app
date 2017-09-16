@@ -61,7 +61,7 @@ def in_circle(request):
         return HttpResponseForbidden("POST only")
 
     try:
-        request_decoded = json.loads(request.body)
+        request_decoded = json.loads(request.body.decode("utf-8") )
     except json.JSONDecodeError:
         return HttpResponseBadRequest("Malformed JSON")
 
