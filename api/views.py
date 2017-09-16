@@ -1,6 +1,7 @@
 # Create your views here.
 
 import json
+import json.decoder
 import jsonschema
 
 from .circle import Circle, Point, check_point_in_circle
@@ -62,7 +63,7 @@ def in_circle(request):
 
     try:
         request_decoded = json.loads(request.body.decode("utf-8") )
-    except json.JSONDecodeError:
+    except json.decoder.JSONDecodeError:
         return HttpResponseBadRequest("Malformed JSON")
 
     try:
