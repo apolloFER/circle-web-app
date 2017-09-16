@@ -1,8 +1,8 @@
 from django.conf.urls import url, include
 # from django.contrib import admin
 
-from .views import validate
+from .views import in_circle
 
 urlpatterns = [
-    url(r'^in_circle', validate, name='in_circle')
+    url(r'^in_circle', in_circle, name='in_circle')
 ]
