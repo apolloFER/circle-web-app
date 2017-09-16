@@ -17,7 +17,7 @@ class Circle(object):
         return distance < self.radius
 
 
-def check_dot_in_circle(point, circle): # type: (Point, Circle) -> bool
+def check_point_in_circle(point, circle): # type: (Point, Circle) -> bool
     return circle.is_point_within(point)
 
 

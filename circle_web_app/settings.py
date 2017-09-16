@@ -25,7 +25,7 @@ SECRET_KEY = 'ztrl6ca=wge^**$=%h&0qh3_m*q1$s@_sd3r@ur9lysg#17qs^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["circle-validate.ronic.co"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
