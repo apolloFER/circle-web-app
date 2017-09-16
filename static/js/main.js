@@ -77,7 +77,7 @@ function resizeCanvas() {
 var width = window.innerWidth;
 var height = window.innerHeight;
 
-var radius = randomIntFromInterval(Math.min(width, height) / 32, Math.min(width, height) / 8);
+var radius = randomIntFromInterval(Math.min(width, height) / 32, Math.min(width, height) / 8 + 1);
 
 var pos_x = randomIntFromInterval(radius - 1, width - radius - 1);
 var pos_y = randomIntFromInterval(radius - 1, height - radius - 1);
