@@ -154,7 +154,7 @@ Depending on which one you are using the image name will differ.
 
 Run it using
 
-```docker run darkoronic/circle-validator```
+```docker run -p 8000:8000 darkoronic/circle-validator```
 
 Replace ```darkoronic/circle-validator``` with ```circle-validator``` in case you built it yourself.
 
