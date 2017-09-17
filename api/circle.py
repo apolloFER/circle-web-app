@@ -10,6 +10,8 @@ class Point(object):
 class Circle(object):
     def __init__(self, x=0.0, y=0.0, radius=0.0): # type: (float, float, float) -> None
         self.position = Point(x, y)
+        if radius <= 0.0:
+            raise ValueError("Negative radius not allowed")
         self.radius = radius
 
     def is_point_within(self, point): # type: (Point) -> bool
@@ -17,7 +19,7 @@ class Circle(object):
         return distance < self.radius
 
 
-def check_point_in_circle(point, circle): # type: (Point, Circle) -> bool
+def check_point_in_circle(point, circle):  # type: (Point, Circle) -> bool
     return circle.is_point_within(point)
 
 

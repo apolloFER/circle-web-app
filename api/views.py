@@ -76,7 +76,10 @@ def in_circle(request):
     circle_radius = request_decoded["circle"]["radius"]
 
     point = Point(point_x, point_y)
-    circle = Circle(circle_x, circle_y, circle_radius)
+    try:
+        circle = Circle(circle_x, circle_y, circle_radius)
+    except ValueError:
+        return HttpResponseBadRequest("Negative radius")
 
     is_inside = check_point_in_circle(point, circle)
 

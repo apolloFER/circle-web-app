@@ -37,6 +37,13 @@ def test_not_alpha_particle():
     assert not isinstance(response, HttpResponseServerError)
 
 
+def test_negative_radius():
+    body = b'{"point": {"x": 1.0, "y": 2.0}, "circle": {"x": 1.1, "y": 2.6, "radius": -4.2}}'
+    request = rf.post('/api', data=body, content_type='application/json')
+    response = in_circle(request)
+    assert isinstance(response, HttpResponseBadRequest)
+
+
 def test_validate_schema():
     body = b'{"point": {"x": 1.0, "y": 2.0}, "circle": {"x": 1.1, "y": 2.6, "radius": 4.2}}'
     request = rf.post('/api', data=body, content_type='application/json')
