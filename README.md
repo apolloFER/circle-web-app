@@ -188,7 +188,7 @@ This will run the tests in Docker. Just make sure to rebuild it with ```docker-c
 
 ### Travis
 
-Circle Validator is tested Using Travis-CI - https://travis-ci.org/apolloFER/circle-web-app
+Circle Validator is tested using Travis-CI - https://travis-ci.org/apolloFER/circle-web-app
 
 ## Deployment
 
