@@ -78,6 +78,7 @@ WSGI_APPLICATION = 'circle_web_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# We don't need no database, comment it out
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
