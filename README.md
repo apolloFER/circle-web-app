@@ -186,6 +186,10 @@ There's an easier way to run tests using Docker Compose. As you did for running 
 
 This will run the tests in Docker. Just make sure to rebuild it with ```docker-compose build tests``` if you change something.
 
+### Travis
+
+Circle Validator is tested Using Travis-CI - https://travis-ci.org/apolloFER/circle-web-app
+
 ## Deployment
 
 Current Docker images are good only for testing and development since they rely on Django's runserver command which is not intended for production environments.
