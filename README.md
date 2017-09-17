@@ -182,7 +182,7 @@ Navigate to the folder where Circle Validator is located and run ```pytest```.
 
 There's an easier way to run tests using Docker Compose. As you did for running the app, navigate to the folder and then run
 
-```docker-compose up tests```
+```docker-compose up test```
 
 This will run the tests in Docker. Just make sure to rebuild it with ```docker-compose build tests``` if you change something.
 
