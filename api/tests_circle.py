@@ -17,3 +17,12 @@ def test_is_not_within():
     assert not check_point_in_circle(point, circle)
 
 
+def test_negative_radius():
+    try:
+        Circle(2.0, 1.0, -5.0)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError()
+
+
