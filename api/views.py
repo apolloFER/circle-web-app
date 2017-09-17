@@ -7,6 +7,10 @@ from .circle import Circle, Point, check_point_in_circle
 
 from django.http.response import HttpResponseBadRequest, HttpResponseForbidden, HttpResponseServerError, JsonResponse
 
+# JSON schemas
+# For a more serious app these would be extracted to special JSON files instead of inline
+
+# JSON schema for the request part
 schema_request = {
     "type": "object",
     "required": ["point", "circle"],
@@ -37,6 +41,7 @@ schema_request = {
     },
 }
 
+#JSON schema for response part
 schema_response = {
     "type": "object",
     "required": ["point", "inside"],
@@ -57,14 +62,17 @@ schema_response = {
 
 
 def in_circle(request):
+    # We accept only POST requests, GET requests are Forbidden
     if request.method != "POST":
         return HttpResponseForbidden("POST only")
 
+    # Try to load JSON and fail if it's malformed
     try:
-        request_decoded = json.loads(request.body.decode("utf-8") )
+        request_decoded = json.loads(request.body.decode("utf-8"))
     except ValueError:
         return HttpResponseBadRequest("Malformed JSON")
 
+    # Schema validation fixes a lot of edge cases
     try:
         # validate JSON with jsonschema
         jsonschema.validate(request_decoded, schema_request)
@@ -77,6 +85,7 @@ def in_circle(request):
 
     point = Point(point_x, point_y)
     try:
+        # Circle __init__ can fail if radius <= 0
         circle = Circle(circle_x, circle_y, circle_radius)
     except ValueError:
         return HttpResponseBadRequest("Negative radius")

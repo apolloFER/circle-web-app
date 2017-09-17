@@ -25,6 +25,7 @@ SECRET_KEY = 'ztrl6ca=wge^**$=%h&0qh3_m*q1$s@_sd3r@ur9lysg#17qs^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Needed for deployment
 ALLOWED_HOSTS = ["circle-validate.ronic.co"]
 
 
@@ -78,6 +79,7 @@ WSGI_APPLICATION = 'circle_web_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# We don't need no database, comment it out
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
