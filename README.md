@@ -184,7 +184,7 @@ There's an easier way to run tests using Docker Compose. As you did for running 
 
 ```docker-compose up test```
 
-This will run the tests in Docker. Just make sure to rebuild it with ```docker-compose build tests``` if you change something.
+This will run the tests in Docker. Just make sure to rebuild it with ```docker-compose build test``` if you change something.
 
 ### Travis
 
