@@ -1,7 +1,7 @@
 # Circle Validator
 
 [![Build Status](https://travis-ci.org/apolloFER/circle-web-app.svg?branch=master)](https://travis-ci.org/apolloFER/circle-web-app)
-[![Demo](https://img.shields.io/badge/demo-online-green.svg)](https://circle-validate.ronic.co)
+[![Demo](https://img.shields.io/badge/demo-online-green.svg)](http://circle-validate.ronic.co)
 [![Docker](https://img.shields.io/docker/pulls/darkoronic/circle-validator.svg)](https://hub.docker.com/r/darkoronic/circle-validator/)
 > Simple Django project that draws a circle and then validates if the user clicks inside.
 
@@ -26,7 +26,7 @@ It's compatible with Python 2.7, 3.4, 3.5 and 3.6.
 
 ## Demo
 
-There's a fully working demo at https://circle-validate.ronic.co
+There's a fully working demo at http://circle-validate.ronic.co
 
 ## Features
 
